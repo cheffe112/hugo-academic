@@ -7,6 +7,8 @@
         {{ .Params.event_short | markdownify }}
     {{ else if .Params.event }}
             {{ .Params.event | markdownify }}
+    {{ else if .Params.location }}
+            {{ .Params.location | markdownify }}
     {{ end }}
   </p>
 </li>
