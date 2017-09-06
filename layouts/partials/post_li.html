@@ -9,7 +9,11 @@
   </a>
   {{end}}
   <h3 class="article-title" itemprop="name">
-    <a href="{{ $post.Permalink }}" itemprop="url">{{ $post.Title }}</a>
+    {{ if isset $post.Params "external_link" }}
+        <a href="{{ $post.Params.external_link }}" itemprop="url">{{ $post.Title }}</a>
+    {{ else }}
+        <a href="{{ $post.Permalink }}" itemprop="url">{{ $post.Title }}</a>
+    {{ end }}
   </h3>
   {{ partial "article_metadata" (dict "content" $post "is_list" 1) }}
   <div class="article-style" itemprop="articleBody">

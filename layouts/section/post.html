@@ -21,7 +21,7 @@
     {{end}}
     {{ if isset .Params "external_link" }}
         <h2><a href="{{ .Params.external_link }}">{{ .Title }}</a></h2>
-    {{else}}
+    {{ else }}
         <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
     {{ end }}
     {{ partial "article_metadata" (dict "content" . "is_list" 1) }}
