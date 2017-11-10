@@ -523,6 +523,11 @@ article {
   line-height: 30px; /* Match share bar line height. */
 }
 
+.pub .pub-contrib {
+  font-family: 'Lato', sans-serif;
+  color: #aaa;
+}
+
 .pub .pub-row-heading {
   font-weight: bold;
 }

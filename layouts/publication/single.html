@@ -8,11 +8,14 @@
     <h1 itemprop="name">{{ .Title }}</h1>
     <span class="pub-authors" itemprop="author">
       {{ with .Params.authors }}
-      {{ delimit . ", " | markdownify }}
+      {{ delimit . ", " }}
       {{ end }}
     </span>
     <span class="pull-right">
-      {{ partial "share.html" . }}
+        <span class="pub-contrib">
+          * equal contribution
+        </span>&nbsp;
+        {{ partial "share.html" . }}
     </span>
   </div>
 
