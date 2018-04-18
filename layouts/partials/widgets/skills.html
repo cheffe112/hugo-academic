@@ -1,0 +1,76 @@
+{{ $ := .root }}
+{{ $page := .page }}
+{{ $autolink := default true $page.Params.autolink }}
+
+<!-- Skills and Experience widget -->
+<div class="row">
+  <div class="col-xs-12 col-md-4 section-heading">
+    <h1>{{ with $page.Title }}{{ . | markdownify }}{{ end }}</h1>
+    {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+  </div>
+  <div class="col-xs-12 col-md-12">
+    {{ with $page.Content }}<p>{{ . | markdownify }}</p>{{ end }}
+    <ul class="fa-ul" itemscope>
+      {{ with $page.Params.skills }}
+      <div class="col-sm-12">
+        <h3>{{ i18n "languages" | markdownify }}</h3>
+        <ul class="ul-languages">
+          {{ delimit .languages ", " }}
+        </ul>
+      </div>
+      {{ end }}
+    </ul>
+  </div>
+  <div class="col-xs-12 col-md-12">
+    {{ with $page.Content }}<p>{{ . | markdownify }}</p>{{ end }}
+    <ul class="fa-ul" itemscope>
+      {{ with $page.Params.skills }}
+      <div class="col-sm-12">
+        <h3>{{ i18n "software" | markdownify }}</h3>
+        <ul class="ul-software">
+          {{ delimit .software ", " }}
+        </ul>
+      </div>
+      {{ end }}
+    </ul>
+  </div>
+  <div class="col-xs-12 col-md-12">
+    {{ with $page.Content }}<p>{{ . | markdownify }}</p>{{ end }}
+    <ul class="fa-ul" itemscope>
+      {{ with $page.Params.skills }}
+      <div class="col-sm-12">
+        <h3>{{ i18n "hardware" | markdownify }}</h3>
+        <ul class="ul-hardware">
+          {{ delimit .hardware ", " }}
+        </ul>
+      </div>
+      {{ end }}
+    </ul>    
+  </div>
+  <div class="col-xs-12 col-md-12">
+    {{ with $page.Content }}<p>{{ . | markdownify }}</p>{{ end }}
+    <ul class="fa-ul" itemscope>
+      {{ with $page.Params.skills }}
+      <div class="col-sm-12">
+        <h3>{{ i18n "applications" | markdownify }}</h3>
+        <ul class="ul-applications">
+          {{ delimit .applications ", " }}
+        </ul>
+      </div>
+      {{ end }}
+    </ul>
+  </div>
+  <div class="col-xs-12 col-md-12">
+    {{ with $page.Content }}<p>{{ . | markdownify }}</p>{{ end }}
+    <ul class="fa-ul" itemscope>
+      {{ with $page.Params.skills }}
+      <div class="col-sm-12">
+        <h3>{{ i18n "project_management" | markdownify }}</h3>
+        <ul class="ul-project_management">
+          {{ delimit .project_management ", " }}
+        </ul>
+      </div>
+      {{ end }}
+    </ul>
+  </div>
+</div>

@@ -52,6 +52,26 @@
 - id: more_talks
   translation: More Talks
 
+# Skills widget
+
+- id: skills
+  translation: Skills
+
+- id: languages
+  translation: Languages
+
+- id: software
+  translation: Robotics, Computer Vision and Machine Learning Software
+
+- id: hardware
+  translation: Robotics Hardware
+  
+- id: applications
+  translation: Applications
+
+- id: project_management
+  translation: Project Management
+
 # Publication/Talk details
 
 - id: abstract
