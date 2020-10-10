@@ -19,12 +19,13 @@
         {{ if $.Site.Params.former_name }}
         <h3 itemprop="former_name">(formerly {{ $.Site.Params.former_name }})</h3>
         {{ end }}
-        <h3 itemprop="jobTitle">{{ $.Site.Params.role }}</h3>
-        {{ if $.Site.Params.organization }}
+        {{ range $.Site.Params.organizations }}
         <h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-          {{ with $.Site.Params.organization_url }}<a href="{{ . }}" target="_blank" itemprop="url">{{ end }}
-            <span itemprop="name">{{ $.Site.Params.organization }}</span>
-          {{ if $.Site.Params.organization_url }}</a>{{ end }}
+          <span itemprop="role">{{ .role }}</span><br>
+          
+          {{ with .url }}<a href="{{ . }}" target="_blank" itemprop="url">{{ end }}
+          <span itemprop="name">{{ .name }}</span>
+          {{ if .url }}</a>{{ end }}
         </h3>
         {{ end }}
       </div>
